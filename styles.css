@@ -5,6 +5,6 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-a {
+a, a:visited {
     text-decoration: none;
 }

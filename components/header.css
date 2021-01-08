@@ -1,5 +1,6 @@
 header {
   width: calc(100% - 40px);
+  height: auto;
   padding: 20px;
   background-color: #212121;
   display: -webkit-box;
@@ -8,7 +9,7 @@ header {
 }
 
 header h1 {
-  color: #fff;
+  color: #ffffff;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 50%;
           flex: 0 1 50%;
@@ -23,7 +24,7 @@ header nav {
 }
 
 header nav a, header nav a:visited {
-  color: #fff;
+  color: #ffffff;
   font-size: 20px;
   margin-left: 3vw;
   line-height: 37px;

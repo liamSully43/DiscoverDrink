@@ -1,1 +1,1 @@
-<p>Search bar</p>
+<p>Searchbar</p>
