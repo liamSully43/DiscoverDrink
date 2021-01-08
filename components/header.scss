@@ -1,0 +1,39 @@
+@import '../variables';
+
+header {
+    width: calc(100% - 40px);
+    padding: 20px;
+    background-color: $bl;
+    display: flex;
+
+    h1 {
+        color: $wh;
+        flex: 0 1 50%;
+        font-weight: 300;
+    }
+
+    nav {
+        flex: 1 0 50%;
+        text-align: right;
+
+        a, a:visited {
+            color: $wh;
+            font-size: 20px;
+            margin-left: 3vw;
+            line-height: 37px;
+            font-weight: 300;
+
+            &:hover {
+                color: darkgrey;
+            }
+
+            &:first-of-type {
+                margin-left: 0px;
+            }
+        }
+
+        .selected, .selected:visited {
+            color: $or;
+        }
+    }
+}
