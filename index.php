@@ -1,7 +1,5 @@
 <?php
-$request = $_SERVER['REQUEST_URI'];
-
-switch ($request) {
+switch ($_SERVER['REQUEST_URI']) {
     case '/':
     case '':
         require __DIR__ . '/views/home.php';

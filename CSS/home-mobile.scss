@@ -1,0 +1,26 @@
+.text, .search {
+    height: 30vh;
+    padding: 0px;
+}
+
+.text {
+    width: 95vw;
+    max-width: 950px;
+    margin: auto;
+    padding: 50px 0px;
+    height: auto;
+
+    h1, p {
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 3vw;
+        margin-bottom: 20px;
+    }
+}
+
+.search {
+    width: 95vw;
+    margin: auto;
+}

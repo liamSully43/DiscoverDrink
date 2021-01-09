@@ -1,0 +1,33 @@
+body, html {
+  background-color: #eeeeee;
+}
+
+.text {
+  width: 100%;
+  max-width: 430px;
+  height: 40vh;
+  display: block;
+  padding-left: 7vw;
+  padding-top: 150px;
+}
+
+.text h1 {
+  font-size: 30px;
+  color: #ffa100;
+  margin-bottom: 70px;
+}
+
+.text h1 i {
+  font-weight: 200;
+}
+
+.text p {
+  font-size: 20px;
+}
+
+.search {
+  width: calc(100% - 14vw);
+  max-width: 1000px;
+  padding: 0px 7vw;
+}
+/*# sourceMappingURL=home.css.map */

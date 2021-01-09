@@ -5,6 +5,59 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
+*:focus {
+    outline: none !important;
+}
+
 a, a:visited {
     text-decoration: none;
+}
+
+body, html {
+    background-color: transparent;
+}
+
+.card-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+    background-color: #eee;
+}
+
+.black, .orange, .white {
+    width: 1000px;
+    height: 1000px;
+    border-radius: 150px;
+    box-shadow: -0.5vw 0.5vw 0.3vw rgba(0, 0, 0, 0.36);
+}
+
+.black {
+    background-color: #212121;
+    transform: rotate(41deg);
+    margin-top: 80px;
+    margin-left: 60vw;
+}
+
+.orange {
+    background-color: #ffa100;
+    transform: rotate(27deg);
+    margin-top: -1200px;
+    margin-left: 72vw;
+}
+
+.white {
+    background-color: #fff;
+    transform: rotate(35deg);
+    margin-top: -1050px;
+    margin-left: 87vw;
+}
+
+@media(max-width: 1000px) {
+    .card-container {
+        padding-top: 30%;
+    }
 }

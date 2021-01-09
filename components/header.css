@@ -39,6 +39,10 @@ header nav a:first-of-type, header nav a:visited:first-of-type {
   margin-left: 0px;
 }
 
+header nav a:last-of-type, header nav a:visited:last-of-type {
+  margin-right: 20px;
+}
+
 header nav .selected, header nav .selected:visited {
   color: #ffa100;
 }

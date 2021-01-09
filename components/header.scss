@@ -31,6 +31,10 @@ header {
             &:first-of-type {
                 margin-left: 0px;
             }
+
+            &:last-of-type {
+                margin-right: 20px;
+            }
         }
 
         .selected, .selected:visited {
