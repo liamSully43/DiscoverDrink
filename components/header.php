@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Discover Drink</h1>
+        <a class="header" href="/">Discover Drink</a>
         <nav>
             <a href='/search' class='<?php if($class === "search") {echo "selected";} ?>'>Search</a>
             <a href='/drinks' class='<?php if($class === "drinks") {echo "selected";} ?>'>Drinks</a>

@@ -55,9 +55,3 @@ body, html {
     margin-top: -1050px;
     margin-left: 87vw;
 }
-
-@media(max-width: 1000px) {
-    .card-container {
-        padding-top: 30%;
-    }
-}

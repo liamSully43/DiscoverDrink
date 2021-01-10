@@ -1,0 +1,53 @@
+.text, .search {
+  height: 30vh;
+  padding: 0px;
+}
+
+.text {
+  width: 95vw;
+  max-width: 950px;
+  margin: auto;
+  padding: 50px 0px;
+  height: auto;
+}
+
+.text h1, .text p {
+  width: 80%;
+}
+
+.text h1 {
+  font-size: 3vw;
+  margin-bottom: 20px;
+}
+
+.search {
+  width: 95vw;
+  margin: auto;
+}
+
+.black, .orange, .white {
+  width: 200vw !important;
+  height: 200vh !important;
+}
+
+.black {
+  -webkit-transform: rotate(-7deg) !important;
+          transform: rotate(-7deg) !important;
+  margin-top: 45vh !important;
+  margin-left: 15vw !important;
+}
+
+.orange {
+  -webkit-transform: rotate(-10deg) !important;
+          transform: rotate(-10deg) !important;
+  margin-top: -200vh !important;
+  margin-left: 43vw !important;
+}
+
+.white {
+  -webkit-transform: rotate(-13deg) !important;
+          transform: rotate(-13deg) !important;
+  margin-top: -200vh !important;
+  margin-left: 70vw !important;
+}
+/*# sourceMappingURL=home-tablet.css.map */

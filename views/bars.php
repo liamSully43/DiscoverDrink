@@ -26,6 +26,8 @@
         return $output;
     }
 ?>
-        <p>Bars</p>
+    <?php
+        includeWithVariables('..\Discover Drink\components\searchbar.php', array("path" => "search", "class" => "dark"), true); // set to page directory - "search" for all pages except the drinks page where it is "drink"
+    ?>
     </body>  
 </html>

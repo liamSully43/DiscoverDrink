@@ -4,7 +4,7 @@ body, html {
 
 .text {
   width: 100%;
-  max-width: 430px;
+  max-width: 600px;
   height: 40vh;
   display: block;
   padding-left: 7vw;
@@ -12,7 +12,7 @@ body, html {
 }
 
 .text h1 {
-  font-size: 30px;
+  font-size: 35px;
   color: #ffa100;
   margin-bottom: 70px;
 }
@@ -22,7 +22,7 @@ body, html {
 }
 
 .text p {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .search {
