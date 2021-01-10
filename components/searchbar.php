@@ -9,12 +9,13 @@
 <?php
     
     if(!$_POST) {
-        $result = "";
+        $results = "";
     }
     else {
         // search page stuff - not needed for home page or bars
-        $result = $_POST["search"];
+        $results = $_POST["search"];
+        include "./searchDB.php";
+        $results = searchBoth($results);
     }
-    return $result;
-
+    return $results;
 ?>

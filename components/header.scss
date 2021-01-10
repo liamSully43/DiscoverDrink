@@ -7,10 +7,15 @@ header {
     background-color: $bl;
     display: flex;
 
-    h1 {
-        color: $wh;
+    .header, .header:visited {
+        color: $wh !important;
         flex: 0 1 50%;
         font-weight: 300;
+        font-size: 32px;
+
+        &:hover {
+            color: $or !important;
+        }
     }
 
     nav {
@@ -39,6 +44,29 @@ header {
 
         .selected, .selected:visited {
             color: $or;
+        }
+    }
+}
+
+@media(max-width: 650px) {
+    header {
+        width: 93.8vw;
+        padding: 3.1vw;
+
+        .header, .header:visited, a, a:visited {
+            height: auto;
+            line-height: 5.846vw;
+            margin: auto;
+        }
+        
+        .header {
+            font-size: 5vw;
+        }
+    
+        nav {
+            a, a:visited {
+                font-size: 3.1vw !important;
+            }
         }
     }
 }

@@ -48,3 +48,17 @@ form {
         }
     }
 }
+
+@media(max-width: 650px) {
+    form {
+        input {
+            font-size: 2.5vw;
+            padding: 1.6vw;
+        }
+    
+        button {
+            padding: 1.6vw 0px;
+            font-size: 2.75vw;
+        }
+    }
+}

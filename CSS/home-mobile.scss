@@ -1,26 +1,39 @@
-.text, .search {
-    height: 30vh;
-    padding: 0px;
-}
-
 .text {
-    width: 95vw;
-    max-width: 950px;
-    margin: auto;
-    padding: 50px 0px;
-    height: auto;
+    width: 86vw;
+    max-width: 86vw;
+    padding: 5vh 7vw;
 
     h1, p {
-        width: 80%;
+        width: 100%;
     }
 
     h1 {
-        font-size: 3vw;
-        margin-bottom: 20px;
+        font-size: 4.7vw;
+    }
+
+    p {
+        font-size: 3.6vw;
     }
 }
 
 .search {
-    width: 95vw;
-    margin: auto;
+    width: 86vw;
+    padding: 0px 7vw;
+}
+
+.black, .orange, .white {
+    border-radius: 25vw !important;
+}
+
+.black {
+    margin-top: 50vh !important;
+    margin-left: 30vw !important;
+}
+
+.orange {
+    margin-left: 70vw !important;
+}
+
+.white {
+    margin-left: 100vw !important;
 }
