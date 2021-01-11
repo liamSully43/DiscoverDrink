@@ -12,7 +12,7 @@ This is a back-up copy of the code used to build the Discover Drink project. The
  - 404 page
 
 ## Known Issues
-None
+Unable to access server using PHP - getting an invalid credentials error despite the credentials being accurate. It's likely a permissions setting that ionos has hidden well.
 
 ## Notes
 None
