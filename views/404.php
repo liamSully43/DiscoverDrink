@@ -9,22 +9,7 @@
     </head>
     <body>
 <?php
-    includeWithVariables('..\Discover Drink\components\header.php', array("class" => "404")); // set to name of page - only search, drinks & bars will highlight their respective links
-
-    function includeWithVariables($filePath, $var = array()) {
-        $output = null;
-        if(file_exists($filePath)) {
-            extract($var);
-
-            ob_start();
-
-            include $filePath;
-
-            $output = ob_get_clean();
-        }
-        print $output;
-        return $output;
-    }
+    require "components/header.php"; 
 ?>
         <p>404</p>
     </body>  

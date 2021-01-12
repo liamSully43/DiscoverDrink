@@ -13,34 +13,16 @@
     </head>
     <body>
 <?php
-    includeWithVariables('..\Discover Drink\components\header.php', array("class" => "home"), false); // set to name of page - only search, drinks & bars will highlight their respective links
-    
-    function includeWithVariables($filePath, $var = array(), $isSearch) {
-        $output = null;
-        if(file_exists($filePath)) {
-            extract($var);
-            
-            ob_start();
-            
-            $results = include $filePath;
-            if($isSearch) {
-                echo $results;
-            }
-            
-            $output = ob_get_clean();
-        }
-        print $output;
-        return $output;
-    }
-    ?>
+    require "components/header.php"; 
+?>
     <section class="text">
         <h1>Search for <i>alcohol, bars</i> & <i>venues</i> all in one place.</h1>
         <p>The all new Discover Drink website offers you the ability to search for your favourite alcohol or venues in one location</p>
     </section>
     <section class="search">
-    <?php
-        includeWithVariables('..\Discover Drink\components\searchbar.php', array("path" => "search", "class" => "dark"), true); // set to page directory - "search" for all pages except the drinks page where it is "drink"
-    ?>
+<?php
+    require "components/searchbar.php";
+?>
     </section>
     <section class="card-container">
         <div class="black"></div>
