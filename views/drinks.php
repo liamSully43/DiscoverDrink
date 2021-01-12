@@ -9,25 +9,10 @@
     </head>
     <body>
 <?php
-    includeWithVariables('..\Discover Drink\components\header.php', array("class" => "drinks")); // set to name of page - only search, drinks & bars will highlight their respective links
-
-    function includeWithVariables($filePath, $var = array()) {
-        $output = null;
-        if(file_exists($filePath)) {
-            extract($var);
-
-            ob_start();
-
-            include $filePath;
-
-            $output = ob_get_clean();
-        }
-        print $output;
-        return $output;
-    }
+    require "components/header.php"; 
 ?>
-    <?php
-        includeWithVariables('..\Discover Drink\components\searchbar.php', array("path" => "search", "class" => "dark"), true); // set to page directory - "search" for all pages except the drinks page where it is "drink"
-    ?>
+<?php
+    require "components/searchbar.php";
+?>
     </body>  
 </html>
