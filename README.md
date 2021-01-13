@@ -12,7 +12,7 @@ This is a back-up copy of the code used to build the Discover Drink project. The
  - 404 page
 
 ## Known Issues
-Unable to access IONOS SQL server using PHP - The permissions settings are too strict and cannot be changed. Oracle offer a free SQL database service which uses REST APIs, this will be used instead.
+Unable to get a bearer token from Oracle to make API calls to the database
 
 ## Notes
-None
+Setup the database with Oracle, added minimal items just for testing & setup api endpoints with slugs to use for searching. Although the OAuth client settings doesn't want to provide a token to use to get the bearer token.
