@@ -10,6 +10,7 @@ This is a back-up copy of the code used to build the Discover Drink project. The
  - Drinks page
  - Bars page
  - 404 page
+ - DB with drinks & bars
 
 ## Known Issues
 Unable to get a bearer token from Oracle to make API calls to the database
