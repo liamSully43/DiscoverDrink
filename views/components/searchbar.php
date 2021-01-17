@@ -20,7 +20,7 @@
         $results = "";
     }
     else {
-        // search page stuff - not needed for home page or bars
+        // search page stuff - not needed for home page or venues
         $results = $_POST["search"];
         include "./searchDB.php";
         $results = search($results);

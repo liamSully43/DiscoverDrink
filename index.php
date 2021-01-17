@@ -10,8 +10,8 @@ switch ($_SERVER['REQUEST_URI']) {
     case '/drinks' :
         require __DIR__ . '/views/drinks.php';
         break;
-    case '/bars' :
-        require __DIR__ . '/views/bars.php';
+    case '/venues' :
+        require __DIR__ . '/views/venues.php';
         break;
     default:
         http_response_code(404);

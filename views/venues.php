@@ -5,7 +5,7 @@
         <!-- Google Fonts -->
         <link defer rel='preconnect' href='https://fonts.gstatic.com'>
         <link defer href='https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,400&display=swap' rel='stylesheet'>
-        <title>Discover Drink | Bars</title>
+        <title>Discover Drink | Venues</title>
     </head>
     <body>
 <?php
