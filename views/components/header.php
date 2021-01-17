@@ -12,7 +12,7 @@
         <nav>
             <a href='/search' class='<?php if($_SERVER['REQUEST_URI'] === "/search") {echo "selected";} ?>'>Search</a>
             <a href='/drinks' class='<?php if($_SERVER['REQUEST_URI'] === "/drinks") {echo "selected";} ?>'>Drinks</a>
-            <a href='/bars' class='<?php if($_SERVER['REQUEST_URI'] === "/bars") {echo "selected";} ?>'>Bars</a>
+            <a href='/venues' class='<?php if($_SERVER['REQUEST_URI'] === "/venues") {echo "selected";} ?>'>Venues</a>
         </nav>
     </header>
 </body>
