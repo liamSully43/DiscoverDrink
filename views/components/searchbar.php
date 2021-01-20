@@ -24,6 +24,7 @@
         $results = $_POST["search"];
         include "./searchDB.php";
         $results = search($results);
+        echo $results;
     }
     return $results;
 ?>
