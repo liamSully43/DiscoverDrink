@@ -1,5 +1,5 @@
 <?php
-    function search() {
+    /*
         $service_url = "https://wzqgwjdjbjnyqun-db202101121708.adb.uk-london-1.oraclecloudapps.com/ords/admin/api/test/test";
         $curl = curl_init($service_url);
         $curl_response = curl_exec($curl);
@@ -16,5 +16,29 @@
         }
         echo "response ok!";
         var_export($decoded->response);
+    */
+
+    function search() {
+        class Drinks {
+            public $name;
+            public $percentage;
+
+            function setName($name) {
+                $this->name = $name;
+            }
+
+            function setPercentage($per) {
+                $this->percentage = $per;
+            }
+        }
+
+        $one = new Drinks();
+        $two = new Drinks();
+        $one->setName("water");
+        $one->setPercentage("0%");
+        $two->setName("beer");
+        $two->setPercentage("4%");
+
+        return array($one, $two);
     }   
 ?>

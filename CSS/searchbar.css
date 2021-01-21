@@ -54,6 +54,14 @@ form .light:hover {
   background-color: #eeeeee;
 }
 
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.36);
+          box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.36);
+}
+
 @media (max-width: 650px) {
   form input {
     font-size: 2.5vw;

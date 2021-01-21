@@ -1,0 +1,45 @@
+@import "../variables";
+
+.result {
+    width: calc(100% + 20px);
+    padding: 20px;
+    padding-left: 0px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba($color: black, $alpha: 0.36%);
+    background-color: $wh;
+    margin-top: 30px;
+    display: flex;
+
+    img {
+        display: inline-block;
+        vertical-align: top;
+        flex: 0 1 10%;
+        max-width: 120px;
+    }
+
+    .text {
+        display: inline-block;
+        flex: 0 1 90%;
+
+        .header {    
+            p {
+                display: inline-block;
+            }
+    
+            p:first-of-type {
+                font-size: 20px;
+                color: $or;
+            }
+    
+            p:last-of-type {
+                font-size: 14px;
+                margin-left: 20px;
+            }
+        }
+
+        .description {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    }
+}
