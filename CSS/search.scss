@@ -1,0 +1,12 @@
+@import "../variables";
+
+body {
+    background-color: $bg;
+}
+
+.search-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+}

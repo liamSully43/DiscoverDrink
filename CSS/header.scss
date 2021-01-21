@@ -6,6 +6,8 @@ header {
     padding: 20px;
     background-color: $bl;
     display: flex;
+    position: sticky;
+    top: 0;
 
     .header, .header:visited {
         color: $wh !important;
