@@ -13,7 +13,7 @@ This is a back-up copy of the code used to build the Discover Drink project. The
  - DB with drinks & bars
 
 ## Known Issues
-Unable to get a bearer token from Oracle to make API calls to the database
+Unable to get a bearer token from Oracle to make API calls to the database - also tried connecting it to MongoDB but the MongoDB PHP extension doesn't want to work.
 
 ## Notes
 Setup the database with Oracle, added minimal items just for testing & setup api endpoints with slugs to use for searching. Although the OAuth client settings doesn't want to provide a token to use to get the bearer token.
