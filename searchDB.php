@@ -1,44 +1,66 @@
 <?php
-    /*
-        $service_url = "https://wzqgwjdjbjnyqun-db202101121708.adb.uk-london-1.oraclecloudapps.com/ords/admin/api/test/test";
-        $curl = curl_init($service_url);
-        $curl_response = curl_exec($curl);
-        if($curl_response === false) {
-            $info = curl_getinfo($curl);
-            curl_close($curl);
-            die('error occured during curl exec. ' . var_export($info));
+    // get .env variables
+    $lines = file(__DIR__ . "/.env", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+
+        if (strpos(trim($line), '#') === 0) {
+            continue;
         }
 
-        curl_close($curl);
-        $decoded = json_decode($curl_response);
-        if(isset($decoded->response->status) && $decoded->response->status == 'ERROR') {
-            die('error occured. ' . $decoded->response->errormessage);
+        list($name, $value) = explode('=', $line, 2);
+        $name = trim($name);
+        $value = trim($value);
+
+        if (!array_key_exists($name, $_SERVER) && !array_key_exists($name, $_ENV)) {
+            putenv(sprintf('%s=%s', $name, $value));
+            $_ENV[$name] = $value;
+            $_SERVER[$name] = $value;
         }
-        echo "response ok!";
-        var_export($decoded->response);
-    */
+    }
+    
+    // whitelisted all IP addresses from MongoDBs side - added 6hr expiry
 
-    function search() {
-        class Drinks {
-            public $name;
-            public $percentage;
+function search($searchTerm) {
+    $username = $_ENV["DB_USERNAME"];
+    $password = $_ENV["DB_PASSWORD"];
+    $database = $_ENV["DB_DATABASE"];
+    
+    $client = new MongoDB\Driver\Manager("mongodb+srv://$username:$password@cluster0.4fyfr.mongodb.net/$database?retryWrites=true&w=majority");
+    $filter = ["type" => "cider", "name" => $searchTerm];
+    $query = new MongoDB\Driver\Query($filter);
+    $cursor = $client->executeQuery("DiscoverDrink.items", $query);
+    // echo results
+    foreach($cursor as $doc) {
+        echo $doc->type;
+        echo $doc->name;
+        echo $doc->percentage;
+        echo $doc->description;
+        $img = $doc->img;
+        echo "<img width='60' height='auto' src='$img' />";
+    }
 
-            function setName($name) {
-                $this->name = $name;
-            }
 
-            function setPercentage($per) {
-                $this->percentage = $per;
-            }
+    // default/placeholder code for returning results
+    class Drinks {
+        public $name;
+        public $percentage;
+
+        function setName($name) {
+            $this->name = $name;
         }
 
-        $one = new Drinks();
-        $two = new Drinks();
-        $one->setName("water");
-        $one->setPercentage("0%");
-        $two->setName("beer");
-        $two->setPercentage("4%");
+        function setPercentage($per) {
+            $this->percentage = $per;
+        }
+    }
 
-        return array($one, $two);
-    }   
+    $one = new Drinks();
+    $two = new Drinks();
+    $one->setName("water");
+    $one->setPercentage("0%");
+    $two->setName("beer");
+    $two->setPercentage("4%");
+
+    return array($one, $two);
+}   
 ?>
