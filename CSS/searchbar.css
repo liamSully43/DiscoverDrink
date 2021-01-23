@@ -5,6 +5,8 @@ form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 form input {
@@ -28,7 +30,7 @@ form button {
   max-height: 42px;
   display: inline-block;
   padding: 10px 0px;
-  border: solid 2px #ffa100;
+  border: solid 2px #ffffff;
   font-size: 18px;
   font-weight: 500;
   -webkit-box-shadow: 3px 3px 10px black;
@@ -54,12 +56,84 @@ form .light:hover {
   background-color: #eeeeee;
 }
 
+form .tag-container {
+  display: none;
+}
+
 .card {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 15px;
   -webkit-box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.36);
           box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.36);
+}
+
+.card button {
+  background-color: #ffffff;
+  color: #ffa100;
+  border-color: #ffa100;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.card button:hover {
+  background-color: #ffe2b5;
+}
+
+.card .tag-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  margin-top: 20px;
+}
+
+.card .tag-container label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+  padding: 7px;
+  border: solid 1px #ffa100;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-right: 20px;
+  color: #ffa100;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.card .tag-container label:last-of-type {
+  margin-right: 0px;
+}
+
+.card .tag-container label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.card .tag-container label input:checked ~ .custom-checkbox {
+  color: #ffa100;
+}
+
+.card .tag-container label .custom-checkbox {
+  width: 20px;
+  max-width: 20px;
+  height: 20px;
+  border: solid 1px #ffa100;
+  border-radius: 3px;
+  float: right;
+  line-height: 16px;
+  color: #ffffff;
+  background-color: #ffffff;
+}
+
+.card .tag-container .active {
+  background-color: #ffa100;
+  color: #ffffff;
 }
 
 @media (max-width: 650px) {

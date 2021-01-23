@@ -17,6 +17,10 @@ body, html {
     background-color: transparent;
 }
 
+.hide {
+    display: none !important;
+}
+
 .card-container {
     width: 100vw;
     height: 100vh;

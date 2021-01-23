@@ -21,7 +21,40 @@
 <form method="POST" action="<?php echo $route ?>" class="<?php echo $background ?>">
     <input type="text" name="search" placeholder="Search" />
     <button class="dark" type="submit">Search</button>
+    <div class="tag-container">
+        <label class="tags cider">
+            Cider
+            <input id="cider" type="checkbox" name="cider" value="checked" />
+            <span class="custom-checkbox">&chi;</span>
+        </label>
+        <label class="tags lager">
+            Lager
+            <input id="lager" type="checkbox"name="lager" value="checked" />
+            <span class="custom-checkbox">&chi;</span>
+        </label>
+        <label class="tags ale">
+            Ale
+            <input id="ale" type="checkbox"name="ale" value="checked" />
+            <span class="custom-checkbox">&chi;</span>
+        </label>
+        <label class="tags wine">
+            Wine
+            <input id="wine" type="checkbox"name="wine" value="checked" />
+            <span class="custom-checkbox">&chi;</span>
+        </label>
+        <label class="tags spirits">
+            Spirits
+            <input id="spirits" type="checkbox"name="spirits" value="checked" />
+            <span class="custom-checkbox">&chi;</span>
+        </label>
+        <label class="tags venues <?php if($route === "/drinks") echo 'hide' ?>">
+            Venues
+            <input id="venues" type="checkbox"name="venues" value="checked" />
+            <span class="custom-checkbox">&chi;</span>
+        </label>
+    </div>
 </form>
+<script type="text/JavaScript" src="../JS/searchbar.js"></script>
 <?php
     
     if(!$_POST) {
