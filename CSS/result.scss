@@ -29,6 +29,7 @@
             p:first-of-type {
                 font-size: 20px;
                 color: $or;
+                text-transform: capitalize !important;
             }
     
             p:last-of-type {
@@ -38,7 +39,6 @@
         }
 
         .description {
-            font-size: 14px;
             margin-top: 20px;
         }
     }

@@ -35,6 +35,7 @@
 .result .text .header p:first-of-type {
   font-size: 20px;
   color: #ffa100;
+  text-transform: capitalize !important;
 }
 
 .result .text .header p:last-of-type {
@@ -43,7 +44,6 @@
 }
 
 .result .text .description {
-  font-size: 14px;
   margin-top: 20px;
 }
 /*# sourceMappingURL=result.css.map */

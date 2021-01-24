@@ -28,6 +28,9 @@ form button {
           flex: 0 1 20%;
   max-width: 140px;
   max-height: 42px;
+  position: relative;
+  background-color: #212121;
+  color: #ffffff;
   display: inline-block;
   padding: 10px 0px;
   border: solid 2px #ffffff;
@@ -38,22 +41,48 @@ form button {
   cursor: pointer;
 }
 
-form .dark {
-  background-color: #212121;
-  color: #ffffff;
+form button .bg, form button p {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-form .dark:hover {
-  background-color: black;
+form button p {
+  width: 100%;
+  z-index: 1;
+  line-height: 36px;
 }
 
-form .light {
-  background-color: #ffffff;
-  color: #212121;
+form button .bg {
+  background-color: #ffa100;
+  width: 0%;
 }
 
-form .light:hover {
-  background-color: #eeeeee;
+form button:hover .bg {
+  -webkit-animation-name: expand;
+          animation-name: expand;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  width: 100%;
+}
+
+@-webkit-keyframes expand {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes expand {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 form .tag-container {
@@ -76,8 +105,32 @@ form .tag-container {
           box-shadow: none;
 }
 
-.card button:hover {
-  background-color: #ffe2b5;
+.card button .bg {
+  background-color: #ffa100;
+}
+
+.card button:hover p {
+  color: #ffffff;
+  -webkit-animation: colourChange 1s;
+          animation: colourChange 1s;
+}
+
+@-webkit-keyframes colourChange {
+  from {
+    color: #ffa100;
+  }
+  to {
+    color: #ffffff;
+  }
+}
+
+@keyframes colourChange {
+  from {
+    color: #ffa100;
+  }
+  to {
+    color: #ffffff;
+  }
 }
 
 .card .tag-container {
@@ -134,6 +187,16 @@ form .tag-container {
 .card .tag-container .active {
   background-color: #ffa100;
   color: #ffffff;
+}
+
+.no-reults {
+  width: 100%;
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.16);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.16);
 }
 
 @media (max-width: 650px) {
