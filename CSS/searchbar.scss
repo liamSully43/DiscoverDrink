@@ -22,6 +22,9 @@ form {
         flex: 0 1 20%;
         max-width: 140px;
         max-height: 42px;
+        position: relative;
+        background-color: $bl;
+        color: $wh;
         display: inline-block;
         padding: 10px 0px;
         border: solid 2px $wh;
@@ -29,23 +32,36 @@ form {
         font-weight: 500;
         box-shadow: 3px 3px 10px black;
         cursor: pointer;
-    }
 
-    .dark {
-        background-color: $bl;
-        color: $wh;
-        
-        &:hover {
-            background-color: black;
+        .bg, p {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
-    }
+        
+        p {
+            width: 100%;
+            z-index: 1;
+            line-height: 36px;
+        }
 
-    .light {
-        background-color: $wh;
-        color: $bl;
+        .bg {
+            background-color: #ffa100;
+            width: 0%;
+        }
 
         &:hover {
-            background-color: $bg;
+            .bg {
+                animation-name: expand;
+                animation-duration: 1s;
+                width: 100%;
+            }
+        }
+
+        @keyframes expand {
+            from {width: 0%}
+            to {width: 100%}
         }
     }
 
@@ -65,10 +81,23 @@ form {
         color: $or;
         border-color: $or;
         box-shadow: none;
-    }
 
-    button:hover {
-        background-color: #ffe2b5;
+        .bg {
+            background-color: $or;
+        }
+        
+        &:hover {
+
+            p {
+                color: $wh;
+                animation: colourChange 1s;
+            }
+
+            @keyframes colourChange {
+                from {color: $or}
+                to {color: $wh}
+            }
+        }
     }
 
     .tag-container {
@@ -122,6 +151,15 @@ form {
             color: $wh;
         }
     }
+}
+
+.no-reults {
+    width: 100%;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: $wh;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba($color: black, $alpha: 0.16%);
 }
 
 @media(max-width: 650px) {
