@@ -16,4 +16,4 @@ This is a back-up copy of the code used to build the Discover Drink project. The
 None
 
 ## Notes
-Need to find a drinks db or API to fill in the results
+Database filled in with all drinks & venues used for the old project.
