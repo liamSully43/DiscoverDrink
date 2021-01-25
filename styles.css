@@ -5,6 +5,15 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
+*::-webkit-scrollbar {
+    background-color: lightgrey;
+    width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: grey;
+}
+
 *:focus {
     outline: none !important;
 }

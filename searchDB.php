@@ -24,6 +24,7 @@ function search($searchTerm) {
     $username = $_ENV["DB_USERNAME"];
     $password = $_ENV["DB_PASSWORD"];
     $database = $_ENV["DB_DATABASE"];
+    $cluster = $_ENV["DB_CLUSTER"];
 
     //checkboxes/filter tags
     // if the checkbox is checked set the variable to the type of drink for the filter
@@ -49,7 +50,8 @@ function search($searchTerm) {
         $venues = "";
     }
     
-    $client = new MongoDB\Driver\Manager("mongodb+srv://$username:$password@cluster0.4fyfr.mongodb.net/$database?retryWrites=true&w=majority");
+    $client = new MongoDB\Driver\Manager("mongodb+srv://$username:$password@$cluster/$database?retryWrites=true&w=majority");
+    $regex = new \MongoDB\BSON\Regex("^{$searchTerm}", 'i'); // fuzzy search
     $filter = [
         '$or' => [
             ["type" => $cider],
@@ -60,7 +62,7 @@ function search($searchTerm) {
             ["type" => $venues],
         ],
         '$and' => [
-            ["tags" => $searchTerm]
+            ["tags" => $regex],
         ]
     ];
 

@@ -1,12 +1,11 @@
 .result {
-  width: calc(100% + 20px);
+  width: 100%;
   padding: 20px;
-  padding-left: 0px;
   border-radius: 15px;
   -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.36);
           box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.36);
   background-color: #ffffff;
-  margin-top: 30px;
+  margin-bottom: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,16 +15,20 @@
   display: inline-block;
   vertical-align: top;
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 10%;
-          flex: 0 1 10%;
-  max-width: 120px;
+      -ms-flex: 0 1 100px;
+          flex: 0 1 100px;
+  margin-right: 20px;
+  width: auto;
+  height: auto;
+  max-height: 100px;
+  border-radius: 50px;
 }
 
 .result .text {
   display: inline-block;
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 90%;
-          flex: 0 1 90%;
+      -ms-flex: 0 1 calc(100% - 100px);
+          flex: 0 1 calc(100% - 100px);
 }
 
 .result .text .header p {
