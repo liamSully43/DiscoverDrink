@@ -1,0 +1,66 @@
+main {
+  width: 100%;
+  height: calc(100vh - 78px);
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #212121;
+  border-top: solid 1px lightgrey;
+  overflow-x: hidden;
+}
+
+main aside {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
+  height: calc(100vh - 78px);
+  background-color: #ffffff;
+  position: relative;
+  -webkit-animation: slide-right 0.6s;
+          animation: slide-right 0.6s;
+  z-index: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@-webkit-keyframes slide-right {
+  from {
+    left: -20%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    left: -20%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+main .searchbar-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 80%;
+          flex: 1 0 80%;
+  height: 50px;
+  margin: 20px;
+  z-index: 2;
+}
+
+main #map {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0px;
+  padding: 0px;
+  z-index: 0;
+}
+/*# sourceMappingURL=venues.css.map */
