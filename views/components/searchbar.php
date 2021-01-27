@@ -62,7 +62,7 @@
         </label>
         <label class="tags venues <?php if($route === "/drinks") echo 'hide'; if($venues) echo "active" ?>"> <!-- hide the venues tag if the component is used on the drinks page -->
             Venues
-            <input id="venues" type="checkbox"name="venues" value="checked" <?php if($venues) echo "checked" ?> />
+            <input id="venues" type="checkbox"name="venues" value="checked" <?php if($venues || $_SERVER['REQUEST_URI'] === "/venues") echo "checked" ?> />
             <span class="custom-checkbox">&chi;</span>
         </label>
     </div>

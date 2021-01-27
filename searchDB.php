@@ -74,5 +74,10 @@ function search($searchTerm) {
     }
 
     return $results;
-}   
+}
+
+function getVenues() {
+    
+    return [];
+}
 ?>
