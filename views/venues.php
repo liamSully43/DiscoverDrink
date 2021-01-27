@@ -14,6 +14,13 @@
 ?>
 <main>
     <aside>
+        <!-- Venue info/values are filled in when a venue is selected on the map -->
+        <img class="venue-image" src="" width="auto" height="auto" alt="Venue" title="Venue" />
+        <h1 class="venue-name"></h1>
+        <p class="venue-cost"></p>
+        <p class="venue-description"></p>
+        <a class="venue-link" href="/venues" target="_blank" rel="nofollow" title="venue">Visit their website &#8618;</a> <!-- /venues is used as a placeholder in case the menu expands without a venue's info -->
+        <button class="minimise" onclick="hideMenu()" title="Close preview">&laquo;</button>
     </aside>
     <div class="searchbar-container">
 <?php
@@ -23,6 +30,22 @@
     <div id="map"></div>
 </main>
     </body>
-    <script defer src="./JS/venues.js"></script>
+    <!--
+        venues.js is loaded first to prepare the functions for the map & the markers
+        Then the PHP search() function is called to fetch all venues saved on the DB
+        This is then passed to JS using the saveMarkers() function
+        Then the google maps API loads last, which calls initMap() to load the map
+        initMap() then calls addMarkers() to add the markers to the map
+
+        If the venues are unable to be fetched then at least the map will load with no errors
+    -->
+    <script src="./JS/venues.js"></script>
+    <?php
+        include "./searchDB.php";
+        $results = search("venue");
+        $venues = json_encode($results);
+        // call the JS displayMarkers function to display the map markers
+        echo "<script type='text/JavaScript'>saveMarkers($venues)</script>"; // venues.js
+    ?>
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ0TaHfzRkeROEkV-GqIwNu_bLO8S_NCA&callback=initMap"></script>
 </html>
