@@ -17,8 +17,6 @@
             $_SERVER[$name] = $value;
         }
     }
-    
-    // whitelisted all IP addresses from MongoDBs side - added 6hr expiry
 
 function search($searchTerm) {
     $username = $_ENV["DB_USERNAME"];
@@ -62,7 +60,7 @@ function search($searchTerm) {
             ["type" => $venues],
         ],
         '$and' => [
-            ["tags" => $regex],
+            ["tags" => $regex]
         ]
     ];
 
@@ -74,10 +72,5 @@ function search($searchTerm) {
     }
 
     return $results;
-}
-
-function getVenues() {
-    
-    return [];
 }
 ?>

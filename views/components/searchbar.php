@@ -1,11 +1,16 @@
 <?php
+    $url = $_SERVER['REQUEST_URI'];
     // get the directory the user is visiting to direct the user to the correct page when submitting the form
-    if($_SERVER['REQUEST_URI'] === "/drinks") {
-        $route = "/drinks";
+    if($url === "/drinks") {
+        $directory = "/drinks";
     }
     else {
-        $route = "/search";
+        $directory = "/search";
     }
+    
+    // removes any queries from the URL to auto add the venues tag if the search is coming from the venues page
+    $root = substr($url, 0, 7);
+
     // save/show the search query & tags of a previous search
     $searchTerm = (isset($_POST["search"])) ? $_POST["search"] : "";
     $cider = (isset($_POST["cider"])) ? true : false;
@@ -21,14 +26,14 @@
 </head>
 <?php
     // add the background & tags if the searchbar component is used on /search or /drinks
-    if($_SERVER['REQUEST_URI'] === "/search" || $_SERVER['REQUEST_URI'] === "/drinks") {
+    if($root === "/search" || $root === "/drinks") {
         $background = "card";
     }
     else {
         $background = "";
     }
 ?>
-<form method="POST" action="<?php echo $route ?>" class="<?php echo $background ?>">
+<form method="POST" action="<?php echo $directory ?>" class="<?php echo $background ?>">
     <input type="text" name="search" placeholder="Search" value="<?php echo $searchTerm ?>" />
     <button class="dark" type="submit">
         <p>Search</p>
@@ -60,9 +65,9 @@
             <input id="spirits" type="checkbox"name="spirits" value="checked" <?php if($spirits) echo "checked" ?> />
             <span class="custom-checkbox">&chi;</span>
         </label>
-        <label class="tags venues <?php if($route === "/drinks") echo 'hide'; if($venues) echo "active" ?>"> <!-- hide the venues tag if the component is used on the drinks page -->
+        <label class="tags venues <?php if($root === "/drinks") echo 'hide'; if($venues) echo "active" ?>"> <!-- hide the venues tag if the component is used on the drinks page -->
             Venues
-            <input id="venues" type="checkbox"name="venues" value="checked" <?php if($venues || $_SERVER['REQUEST_URI'] === "/venues") echo "checked" ?> />
+            <input id="venues" type="checkbox"name="venues" value="checked" <?php if($venues || $root === "/venues") echo "checked" ?> />
             <span class="custom-checkbox">&chi;</span>
         </label>
     </div>
@@ -71,20 +76,25 @@
 <?php
     // hides any $_POST related errors when used on the root URL
     if(!$_POST) {
-        $searchQuery = "";
+        $searchTerm = "";
     }
     else {
         // search page stuff - not needed for home page or venues
-        $searchQuery = $_POST["search"];
+        $searchTerm = $_POST["search"];
         include "./searchDB.php";
-        $results = search($searchQuery); // searches the database and returns the results to this variable
+        $results = search($searchTerm); // searches the database and returns the results to this variable
         if(count($results) <= 0) {
             echo "<p class='no-reults'>No results found. Try narrowing your search.</p>";
         }
         else {
+            $searchQuery = strtolower($searchTerm);
             // loops through each result in the array of results and displays the result component
             for($i = 0; $i < count($results); $i++) {
                 $result = $results[$i];
+                $name = strtolower($result->name);
+                if($result->type === "venue" &&  $name == $searchQuery) {
+                    header("Location: /venues?id=$result->index");
+                }
                 include "./views/components/result.php";
             }
         }

@@ -10,7 +10,7 @@ switch ($_SERVER['REQUEST_URI']) {
     case '/drinks' :
         require __DIR__ . '/views/drinks.php';
         break;
-    case '/venues' :
+    case '/venues' || '/venues?*' :
         require __DIR__ . '/views/venues.php';
         break;
     default:
