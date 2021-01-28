@@ -200,6 +200,8 @@ function saveMarkers(venues) {
 }
 
 function addMarkers(map) {
+    let activeMarker = false; // used when a user is sent from the search page - stops the for loop from looping through all markers once the correct one has been found
+    // add markers to the map
     for(let marker of markers) {
         const lat = parseFloat(marker.lat);
         const lng = parseFloat(marker.lng);
@@ -211,8 +213,22 @@ function addMarkers(map) {
             index: marker.index,
         })
         activeMarkers.push(mapMarker);
+        // only get run if the ?id=* query is included in the url & the correct venue has not been displayed yet
+        if(!activeMarker && window.location.search.length >= 4) {
+            const query = window.location.search;
+            const id = query.substr(4);
+            // if the venue index/id included in the URL matches the current marker being added - show the venue's information
+            if(mapMarker.index == id) {
+                expandMarker(marker);
+                mapMarker.setIcon("./images/pin-selected.png"); // show the venue on the map
+                map.panTo({lat, lng});
+                activeMarker = true; // prevent the if statement from running as it's not going to match to any other venues
+            }
+        }
+        // show a venue when a marker is clicked on
         mapMarker.addListener("click", () => {
             expandMarker(marker);
+            map.panTo({lat, lng});
             for(let marker of activeMarkers) {
                marker.setIcon("./images/pin.png"); 
             }

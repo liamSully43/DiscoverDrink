@@ -11,7 +11,7 @@
 
     img {
         display: inline-block;
-        vertical-align: top;
+        place-self: center;
         flex: 0 1 100px;
         margin-right: 20px;
         width: auto;
@@ -43,6 +43,16 @@
 
         .description {
             margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        a, a:visited {
+            color: $or;
+            margin-right: 20px;
+
+            &:hover {
+                color: #d18000;
+            }
         }
     }
 }

@@ -13,7 +13,7 @@
 
 .result img {
   display: inline-block;
-  vertical-align: top;
+  place-self: center;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 100px;
           flex: 0 1 100px;
@@ -48,5 +48,15 @@
 
 .result .text .description {
   margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.result .text a, .result .text a:visited {
+  color: #ffa100;
+  margin-right: 20px;
+}
+
+.result .text a:hover, .result .text a:visited:hover {
+  color: #d18000;
 }
 /*# sourceMappingURL=result.css.map */
