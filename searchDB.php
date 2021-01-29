@@ -25,42 +25,46 @@ function search($searchTerm) {
     $cluster = $_ENV["DB_CLUSTER"];
 
     //checkboxes/filter tags
-    // if the checkbox is checked set the variable to the type of drink for the filter
-    $cider = (isset($_POST["cider"])) ? "cider" : "x";
-    $lager = (isset($_POST["lager"])) ? "lager" : "x";
-    $ale = (isset($_POST["ale"])) ? "ale" : "x";
-    $wine = (isset($_POST["wine"])) ? "wine" : "x";
-    $spirits = (isset($_POST["spirits"])) ? "spirits" : "x";
-    $venues = (isset($_POST["venues"])) ? "venue" : "x";
+    // If cider exists/is-selected then set $cider to x so that item types of "x" are filtered out of the results instead of item types of "cider" - keeping cider items in the results
+    // Yes it would make more sense to filter IN the types of drinks selected but MongoDb didn't want to work that way while also matching to tags & names off items
+    $cider = (isset($_POST["cider"])) ? "x" : "cider";
+    $lager = (isset($_POST["lager"])) ? "x" : "lager";
+    $ale = (isset($_POST["ale"])) ? "x" : "ale";
+    $wine = (isset($_POST["wine"])) ? "x" : "wine";
+    $spirits = (isset($_POST["spirits"])) ? "x" : "spirits";
+    $venues = (isset($_POST["venues"])) ? "x" : "venue";
 
     // if no tags are selected then enable all types
-    if($cider === "x" && $lager === "x" && $ale === "x" && $wine === "x" && $spirits === "x" && $venues === "x") {
-        $cider = "cider";
-        $lager = "lager";
-        $ale = "ale";
-        $wine = "wine";
-        $spirits = "spirits";
-        $venues = "venue";
+    if($cider === "cider" && $lager === "lager" && $ale === "ale" && $wine === "wine" && $spirits === "spirits" && $venues === "venue") {
+        $cider = "x";
+        $lager = "x";
+        $ale = "x";
+        $wine = "x";
+        $spirits = "x";
+        $venues = "x";
     }
-    
+
     // exclude the venues filter if the search function is called from the drinks page
     if($_SERVER["REQUEST_URI"] === "/drinks") {
-        $venues = "";
+        $venues = "venue";
     }
     
     $client = new MongoDB\Driver\Manager("mongodb+srv://$username:$password@$cluster/$database?retryWrites=true&w=majority");
     $regex = new \MongoDB\BSON\Regex("^{$searchTerm}", 'i'); // fuzzy search
+    $itemName = ucwords($searchTerm);
     $filter = [
-        '$or' => [
+        // this basically grabs all item types and filters out the values of the variable (x if selected or the drink type if not selected)
+        '$nor' => [
             ["type" => $cider],
             ["type" => $lager],
             ["type" => $ale],
             ["type" => $wine],
             ["type" => $spirits],
-            ["type" => $venues],
+            ["type" => $venues]
         ],
-        '$and' => [
-            ["tags" => $regex]
+        '$or' => [
+            ["tags" => $regex],
+            ["name" => $itemName]
         ]
     ];
 
