@@ -63,7 +63,7 @@ main aside .venue-link, main aside .venue-link:visited {
 }
 
 main aside .venue-link:hover, main aside .venue-link:visited:hover {
-  color: #d18000;
+  color: #f98100;
 }
 
 main aside .minimise {
@@ -88,7 +88,7 @@ main aside .minimise {
 }
 
 main aside .minimise:hover {
-  background-color: #ffb649;
+  background-color: #f98100;
 }
 
 main .expand {

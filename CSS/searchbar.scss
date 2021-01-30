@@ -7,15 +7,20 @@ form {
     display: flex;
     flex-wrap: wrap;
 
+    .search-label {
+        position: absolute;
+        opacity: 0;
+    }
+
     input {
         flex: 1 0 75%;
         display: inline-block;
         padding: 10px;
         margin-right: 5%;
-        border: solid 2px $bl;
+        border: solid 2px $secondary;
         border-radius: 10px;
         font-size: 16px;
-        box-shadow: 0px 3px 6px rgba($color: $bl, $alpha: 0.16);
+        box-shadow: 0px 3px 6px rgba($color: $secondary, $alpha: 0.16);
     }
 
     button {
@@ -23,11 +28,11 @@ form {
         max-width: 140px;
         max-height: 42px;
         position: relative;
-        background-color: $bl;
-        color: $wh;
+        background-color: $secondary;
+        color: $primary;
         display: inline-block;
         padding: 10px 0px;
-        border: solid 2px $wh;
+        border: solid 2px $primary;
         border-radius: 10px;
         font-size: 18px;
         font-weight: 500;
@@ -49,7 +54,7 @@ form {
         }
 
         .bg {
-            background-color: #ffa100;
+            background-color: $tertiary;
             width: 0%;
         }
 
@@ -73,32 +78,32 @@ form {
 }
 
 .card {
-    background-color: $wh;
+    background-color: $primary;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 10px 10px 6px rgba($color: black, $alpha: 0.36%);
     margin-bottom: 30px;
 
     button {
-        background-color: $wh;
-        color: $or;
-        border-color: $or;
+        background-color: $primary;
+        color: $tertiary;
+        border-color: $tertiary;
         box-shadow: none;
 
         .bg {
-            background-color: $or;
+            background-color: $tertiary;
         }
         
         &:hover {
 
             p {
-                color: $wh;
+                color: $primary;
                 animation: colourChange 1s;
             }
 
             @keyframes colourChange {
-                from {color: $or}
-                to {color: $wh}
+                from {color: $tertiary}
+                to {color: $primary}
             }
         }
     }
@@ -111,11 +116,11 @@ form {
         label {
             flex: 0 1 100%;
             padding: 7px;
-            border: solid 1px $or;
-            background-color: $wh;
+            border: solid 1px $tertiary;
+            background-color: $primary;
             border-radius: 5px;
             margin-right: 20px;
-            color: $or;
+            color: $tertiary;
             text-align: center;
             font-size: 18px;
             cursor: pointer;
@@ -132,7 +137,7 @@ form {
             }
 
             input:checked ~ .custom-checkbox {
-                color: $or;
+                color: $tertiary;
             }
 
             //custom checkbox design
@@ -140,18 +145,18 @@ form {
                 width: 20px;
                 max-width: 20px;
                 height: 20px;
-                border: solid 1px $or;
+                border: solid 1px $tertiary;
                 border-radius: 3px;
                 float: right;
                 line-height: 16px;
-                color: $wh;
-                background-color: $wh;
+                color: $primary;
+                background-color: $primary;
             }
         }
 
         .active {
-            background-color: $or;
-            color: $wh;
+            background-color: $tertiary;
+            color: $primary;
         }
     }
 }
@@ -159,7 +164,7 @@ form {
 .no-reults {
     width: calc(100% + 10px);
     padding: 15px;
-    background-color: $wh;
+    background-color: $primary;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba($color: black, $alpha: 0.16%);
 }

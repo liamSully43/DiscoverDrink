@@ -1,0 +1,68 @@
+main {
+  width: 100vw;
+  height: calc(100vh - 77px);
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.content {
+  width: 90%;
+  max-width: 860px;
+  height: auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content img, .content .text {
+  max-width: 400px;
+}
+
+.content img {
+  padding-right: 20px;
+  border-right: solid 1px #ffa100;
+}
+
+.content .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  place-self: center;
+  margin-left: 30px;
+}
+
+.content .text h1, .content .text p {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+}
+
+.content .text h1 {
+  font-weight: 400;
+  color: #ffa100;
+  margin-bottom: 30px;
+}
+
+.content .text p {
+  margin-bottom: 40px;
+}
+
+.content .text a, .content .text a:visited {
+  color: #ffa100;
+  text-align: center;
+  padding: 10px;
+  border: solid 1px #ffa100;
+  border-radius: 10px;
+}
+
+.content .text a:hover, .content .text a:visited:hover {
+  color: #ffffff;
+  background-color: #ffa100;
+}
+/*# sourceMappingURL=404.css.map */
