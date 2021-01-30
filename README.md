@@ -4,13 +4,10 @@
 This is a back-up copy of the code used to build the Discover Drink project. The current [live version](http://discoverdrink.org/) is the old version of the project built with Node.js, this version is/will be built with PHP & MongoDB.
 
 ## Features
- - PHP Router
- - Home page
- - Search page
- - Drinks page
- - Bars page
- - 404 page
- - DB with drinks & bars
+ - Advanced search bar - filter in/out types of drinks & venues, search by name or search by descriptive tags
+ - Interactive maps to view where a venue is located - with information about the venue included
+ - Links from the search page to the venues page to quickly & easily view the venues
+ - Links to more information about each drink & venue
 
 ## Known Issues
 None
