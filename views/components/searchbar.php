@@ -1,7 +1,7 @@
 <?php
     $url = $_SERVER['REQUEST_URI'];
     // get the directory the user is visiting to direct the user to the correct page when submitting the form
-    if($url === "/drinks") {
+    if($url === "/drinks" || $url === "/drinks?") {
         $directory = "/drinks";
     }
     else {
@@ -34,7 +34,8 @@
     }
 ?>
 <form method="POST" action="<?php echo $directory ?>" class="<?php echo $background ?>">
-    <input type="text" name="search" placeholder="Search" value="<?php echo $searchTerm ?>" />
+    <label class="search-label" for="searchbar">Search bar</label>
+    <input type="text" name="search" id="searchbar" placeholder="Search" value="<?php echo $searchTerm ?>" />
     <button class="dark" type="submit">
         <p>Search</p>
         <span class="bg"></span>

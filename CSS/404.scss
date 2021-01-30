@@ -1,0 +1,62 @@
+@import "../variables";
+
+main {
+    width: 100vw;
+    height: calc(100vh - 77px);
+    display: grid;
+    place-items: center;
+}
+
+.content {
+    width: 90%;
+    max-width: 860px;
+    height: auto;
+    background-color: $primary;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+
+    img, .text {
+        max-width: 400px;
+    }
+
+    img {
+        padding-right: 20px;
+        border-right: solid 1px $tertiary;
+    }
+
+    .text {
+        display: flex;
+        flex-wrap: wrap;
+        place-self: center;
+        margin-left: 30px;
+
+        h1, p {
+            flex: 1 0 100%;
+        }
+        
+        h1 {
+            font-weight: 400;
+            color: $tertiary;
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-bottom: 40px;
+        }
+
+        a, a:visited {
+            color: $tertiary;
+            text-align: center;
+            padding: 10px;
+            border: solid 1px $tertiary;
+            border-radius: 10px;
+
+            &:hover {
+                color: $primary;
+                background-color: $tertiary;
+            }
+        }
+    }
+
+}

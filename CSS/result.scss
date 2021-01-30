@@ -5,7 +5,7 @@
     padding: 20px;
     border-radius: 15px;
     box-shadow: 5px 5px 10px rgba($color: black, $alpha: 0.36%);
-    background-color: $wh;
+    background-color: $primary;
     margin-bottom: 30px;
     display: flex;
 
@@ -31,7 +31,7 @@
     
             p:first-of-type {
                 font-size: 20px;
-                color: $or;
+                color: $tertiary;
                 text-transform: capitalize !important;
             }
     
@@ -47,11 +47,11 @@
         }
 
         a, a:visited {
-            color: $or;
+            color: $tertiary;
             margin-right: 20px;
 
             &:hover {
-                color: #d18000;
+                color: $tertiary-hover;
             }
         }
     }

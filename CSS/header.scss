@@ -4,20 +4,20 @@ header {
     width: calc(100% - 40px);
     height: auto;
     padding: 20px;
-    background-color: $bl;
+    background-color: $secondary;
     display: flex;
     position: sticky;
     top: 0;
     z-index: 2;
 
     .header, .header:visited {
-        color: $wh !important;
+        color: $primary !important;
         flex: 0 1 50%;
         font-weight: 300;
         font-size: 32px;
 
         &:hover {
-            color: $or !important;
+            color: $tertiary !important;
         }
     }
 
@@ -26,7 +26,7 @@ header {
         text-align: right;
 
         a, a:visited {
-            color: $wh;
+            color: $primary;
             font-size: 20px;
             margin-left: 3vw;
             line-height: 37px;
@@ -46,7 +46,7 @@ header {
         }
 
         .selected, .selected:visited {
-            color: $or;
+            color: $tertiary;
         }
     }
 }

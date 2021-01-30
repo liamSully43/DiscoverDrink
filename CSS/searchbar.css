@@ -9,6 +9,11 @@ form {
       flex-wrap: wrap;
 }
 
+form .search-label {
+  position: absolute;
+  opacity: 0;
+}
+
 form input {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 75%;

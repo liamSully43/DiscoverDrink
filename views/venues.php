@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="description" content="Search for different bars, pubs, clubs & venues all in one location using the interactive map or search bar." />
         <link href='../styles.css' type='text/css' rel='stylesheet' />
         <link href='./CSS/venues.css' type='text/css' rel='stylesheet' />
         <!-- Google Fonts -->
         <link defer rel='preconnect' href='https://fonts.gstatic.com'>
         <link defer href='https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,400&display=swap' rel='stylesheet'>
+        <link rel="icon" type="image/png" href="../images/favicon.png" />
         <title>Discover Drink | Venues</title>
     </head>
     <body>
@@ -15,11 +18,11 @@
 <main>
     <aside>
         <!-- Venue info/values are filled in when a venue is selected on the map -->
-        <img class="venue-image" src="" width="auto" height="auto" alt="Venue" title="Venue" />
+        <img class="venue-image" src="" width="1" height="1" alt="Venue" title="Venue" />
         <h1 class="venue-name"></h1>
         <p class="venue-cost"></p>
         <p class="venue-description"></p>
-        <a class="venue-link" href="/venues" target="_blank" rel="nofollow" title="venue">Visit their website &#8618;</a> <!-- /venues is used as a placeholder in case the menu expands without a venue's info -->
+        <a class="venue-link" href="/venues" target="_blank" rel="noreferrer" title="venue">Visit their website &#8618;</a> <!-- /venues is used as a placeholder in case the menu expands without a venue's info -->
         <button class="minimise" onclick="hideMenu()" title="Close preview">&laquo;</button>
     </aside>
     <div class="searchbar-container">
