@@ -1,0 +1,102 @@
+main {
+  height: calc(100vh - 50px - 3.1vw);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+}
+
+main aside {
+  -webkit-box-flex: 0 !important;
+      -ms-flex: 0 1 100% !important;
+          flex: 0 1 100% !important;
+  height: auto;
+  position: absolute;
+  left: -108vw !important;
+  bottom: 0;
+}
+
+main aside .venue-image {
+  width: 90%;
+  max-width: 350px;
+  height: auto;
+  margin-right: 10px;
+  position: absolute;
+  top: 100%;
+  margin-left: 15px;
+  padding-bottom: 10px;
+}
+
+main aside .venue-name {
+  font-size: 20px !important;
+  margin-top: 15px;
+}
+
+main aside .venue-description {
+  margin-bottom: 20px;
+}
+
+main aside .venue-link {
+  font-size: 14px !important;
+  position: initial !important;
+}
+
+main aside .minimise {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -100;
+}
+
+main .expand {
+  left: 0 !important;
+  -webkit-animation: slide-right 0.6s !important;
+          animation: slide-right 0.6s !important;
+}
+
+@-webkit-keyframes slide-right {
+  from {
+    left: -108vw;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    left: -108vw;
+  }
+  to {
+    left: 0;
+  }
+}
+
+main .shrink {
+  -webkit-animation: slide-left 0.6s !important;
+          animation: slide-left 0.6s !important;
+  left: -108vw !important;
+}
+
+@-webkit-keyframes slide-left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -108vw;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -108vw;
+  }
+}
+
+main .searchbar-container {
+  -webkit-box-flex: 1 !important;
+      -ms-flex: 1 0 calc(100% - 40px) !important;
+          flex: 1 0 calc(100% - 40px) !important;
+}
+/*# sourceMappingURL=venues-mobile.css.map */

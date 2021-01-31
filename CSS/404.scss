@@ -8,19 +8,22 @@ main {
 }
 
 .content {
-    width: 90%;
+    width: 80%;
     max-width: 860px;
     height: auto;
     background-color: $primary;
     padding: 20px;
     border-radius: 20px;
     display: flex;
+    box-shadow: 5px 5px 5px rgba($color: $secondary, $alpha: 0.3);
 
     img, .text {
         max-width: 400px;
     }
 
     img {
+        width: 50%;
+        height: auto;
         padding-right: 20px;
         border-right: solid 1px $tertiary;
     }
@@ -29,7 +32,7 @@ main {
         display: flex;
         flex-wrap: wrap;
         place-self: center;
-        margin-left: 30px;
+        margin-left: clamp(3px, 3vw, 30px);
 
         h1, p {
             flex: 1 0 100%;
@@ -38,19 +41,22 @@ main {
         h1 {
             font-weight: 400;
             color: $tertiary;
-            margin-bottom: 30px;
+            margin-bottom: clamp(1px, 3vw, 30px);
+            font-size: clamp(5px, 2.5vw, 24px);
         }
 
         p {
-            margin-bottom: 40px;
+            margin-bottom: clamp(1px, 4vw, 40px);
+            font-size: clamp(4px, 1.65vw, 16px);
         }
 
         a, a:visited {
             color: $tertiary;
             text-align: center;
-            padding: 10px;
+            padding: clamp(5px, 1vw, 16px);
             border: solid 1px $tertiary;
             border-radius: 10px;
+            font-size: clamp(4px, 1.65vw, 16px);
 
             &:hover {
                 color: $primary;

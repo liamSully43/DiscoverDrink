@@ -1,0 +1,36 @@
+aside {
+    flex: 0 1 250px !important;
+    left: -250px !important;
+
+    .venue-name {
+        font-size: 20px !important;
+    }
+
+    .venue-link {
+        font-size: 14px !important;
+    }
+}
+
+.expand {
+    left: 0 !important;
+    animation: slide-right 0.6s !important;
+}
+
+@keyframes slide-right {
+    from {left: -250px}
+    to {left: 0}
+}
+
+.shrink {
+    animation: slide-left 0.6s !important;
+    left: -250px !important;
+}
+
+@keyframes slide-left {
+    from {left: 0}
+    to {left: -250px}
+}
+
+.searchbar-container {
+    flex: 1 0 calc(100% - 250px) !important;
+}

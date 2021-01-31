@@ -14,12 +14,12 @@ main {
 
 main aside {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 20%;
-          flex: 0 1 20%;
+      -ms-flex: 0 1 350px;
+          flex: 0 1 350px;
   height: calc(100vh - 78px);
   background-color: #ffffff;
   position: relative;
-  left: -20%;
+  left: -350px;
   z-index: 1;
   overflow-x: hidden;
   overflow-y: auto;
@@ -91,61 +91,60 @@ main aside .minimise:hover {
   background-color: #f98100;
 }
 
-main .expand {
-  left: 0;
-  -webkit-animation: slide-right 0.6s;
-          animation: slide-right 0.6s;
-}
-
-@-webkit-keyframes slide-right {
-  from {
-    left: -20%;
-  }
-  to {
-    left: 0;
-  }
-}
-
-@keyframes slide-right {
-  from {
-    left: -20%;
-  }
-  to {
-    left: 0;
-  }
-}
-
-main .shrink {
-  -webkit-animation: slide-left 0.6s;
-          animation: slide-left 0.6s;
-  left: -20%;
-}
-
-@-webkit-keyframes slide-left {
-  from {
-    left: 0;
-  }
-  to {
-    left: -20%;
-  }
-}
-
-@keyframes slide-left {
-  from {
-    left: 0;
-  }
-  to {
-    left: -20%;
-  }
-}
-
 main .searchbar-container {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 80%;
-          flex: 1 0 80%;
   height: 50px;
   margin: 20px;
   z-index: 2;
+}
+
+@media (min-width: 1000px) {
+  main .expand {
+    left: 0;
+    -webkit-animation: slide-right 0.6s;
+            animation: slide-right 0.6s;
+  }
+  @-webkit-keyframes slide-right {
+    from {
+      left: -350px;
+    }
+    to {
+      left: 0;
+    }
+  }
+  @keyframes slide-right {
+    from {
+      left: -350px;
+    }
+    to {
+      left: 0;
+    }
+  }
+  main .shrink {
+    -webkit-animation: slide-left 0.6s;
+            animation: slide-left 0.6s;
+    left: -350px;
+  }
+  @-webkit-keyframes slide-left {
+    from {
+      left: 0;
+    }
+    to {
+      left: -350px;
+    }
+  }
+  @keyframes slide-left {
+    from {
+      left: 0;
+    }
+    to {
+      left: -350px;
+    }
+  }
+  main .searchbar-container {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 calc(100% - 350px);
+            flex: 1 0 calc(100% - 350px);
+  }
 }
 
 main #map {

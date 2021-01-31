@@ -1,28 +1,27 @@
 @import "../variables";
 
 .result {
-    width: 100%;
-    padding: 20px;
+    padding: clamp(5px, 1.2vw, 20px);
     border-radius: 15px;
     box-shadow: 5px 5px 10px rgba($color: black, $alpha: 0.36%);
     background-color: $primary;
-    margin-bottom: 30px;
+    margin-bottom: 3vw;
     display: flex;
 
     img {
         display: inline-block;
         place-self: center;
-        flex: 0 1 100px;
-        margin-right: 20px;
-        width: auto;
-        height: auto;
+        flex: 0 1 clamp(40px, 6vw, 100px);
+        margin-right: clamp(5px, 1.2vw, 20px);
+        max-width: clamp(40px, 6vw, 100px);
+        height: clamp(40px, 6vw, 100px);
         max-height: 100px;
         border-radius: 50px;
     }
 
     .text {
         display: inline-block;
-        flex: 0 1 calc(100% - 100px);
+        flex: 0 1 calc(100% - clamp(40px, 6vw, 100px));
 
         .header {    
             p {
@@ -30,23 +29,25 @@
             }
     
             p:first-of-type {
-                font-size: 20px;
+                font-size: clamp(10px, 1.5vw, 20px);
                 color: $tertiary;
                 text-transform: capitalize !important;
             }
     
             p:last-of-type {
-                font-size: 14px;
+                font-size: clamp(10px, 1vw, 14px);
                 margin-left: 20px;
             }
         }
 
         .description {
-            margin-top: 20px;
-            margin-bottom: 10px;
+            font-size: clamp(10px, 1.5vw, 16px);
+            margin-top: clamp(2px, 1.5vw, 20px);
+            margin-bottom: clamp(2px, 0.75vw, 10px);
         }
 
         a, a:visited {
+            font-size: clamp(10px, 1vw, 16px);
             color: $tertiary;
             margin-right: 20px;
 

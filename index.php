@@ -18,7 +18,7 @@ switch ($_SERVER['REQUEST_URI']) {
         require __DIR__ . '/views/venues.php';
         break;
     default:
-        http_response_code(404);
+        // 404
         require __DIR__ . '/views/404.php';
         break;
 }
