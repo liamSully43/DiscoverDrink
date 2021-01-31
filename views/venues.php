@@ -5,6 +5,8 @@
         <meta name="description" content="Search for different bars, pubs, clubs & venues all in one location using the interactive map or search bar." />
         <link href='../styles.css' type='text/css' rel='stylesheet' />
         <link href='./CSS/venues.css' type='text/css' rel='stylesheet' />
+        <link href='../CSS/venues-tablet.css' type='text/css' rel='stylesheet' media="(max-width: 1000px)" />
+        <link href='../CSS/venues-mobile.css' type='text/css' rel='stylesheet' media="(max-width: 650px)" />
         <!-- Google Fonts -->
         <link defer rel='preconnect' href='https://fonts.gstatic.com'>
         <link defer href='https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,400&display=swap' rel='stylesheet'>

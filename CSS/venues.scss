@@ -12,11 +12,11 @@ main {
     overflow-x: hidden;
 
     aside {
-        flex: 0 1 20%;
+        flex: 0 1 350px;
         height: calc(100vh - 78px);
         background-color: $primary;
         position: relative;
-        left: -20%;
+        left: -350px;
         z-index: 1;
         overflow-x: hidden;
         overflow-y: auto;
@@ -87,31 +87,36 @@ main {
         }
     }
 
-    .expand {
-        left: 0;
-        animation: slide-right 0.6s;
-    }
-
-    @keyframes slide-right {
-        from {left: -20%}
-        to {left: 0}
-    }
-
-    .shrink {
-        animation: slide-left 0.6s;
-        left: -20%;
-    }
-
-    @keyframes slide-left {
-        from {left: 0}
-        to {left: -20%}
-    }
-    
     .searchbar-container {
-        flex: 1 0 80%;
         height: 50px;
         margin: 20px;
         z-index: 2;
+    }
+
+    @media(min-width: 1000px) {
+        .expand {
+            left: 0;
+            animation: slide-right 0.6s;
+        }
+
+        @keyframes slide-right {
+            from {left: -350px}
+            to {left: 0}
+        }
+    
+        .shrink {
+            animation: slide-left 0.6s;
+            left: -350px;
+        }
+    
+        @keyframes slide-left {
+            from {left: 0}
+            to {left: -350px}
+        }
+
+        .searchbar-container {
+            flex: 1 0 calc(100% - 350px);
+        }
     }
 
     #map {

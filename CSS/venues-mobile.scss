@@ -1,0 +1,67 @@
+main {
+    height: calc(100vh - 50px - 3.1vw);
+    flex-wrap: wrap;
+    position: relative;
+
+    aside {
+        flex: 0 1 100% !important;
+        height: auto;
+        position: absolute;
+        left: -108vw !important;
+        bottom: 0;
+    
+        .venue-image {
+            width: 90%;
+            max-width: 350px;
+            height: auto;
+            margin-right: 10px;
+            position: absolute;
+            top: 100%;
+            margin-left: 15px;
+            padding-bottom: 10px;
+        }
+
+        .venue-name {
+            font-size: 20px !important;
+            margin-top: 15px;
+        }
+    
+        .venue-description {
+            margin-bottom: 20px;
+        }
+    
+        .venue-link {
+            font-size: 14px !important;
+            position: initial !important;
+        }
+
+        .minimise {
+            position: sticky;
+            top: -100;
+        }
+    }
+    
+    .expand {
+        left: 0 !important;
+        animation: slide-right 0.6s !important;
+    }
+    
+    @keyframes slide-right {
+        from {left: -108vw}
+        to {left: 0}
+    }
+    
+    .shrink {
+        animation: slide-left 0.6s !important;
+        left: -108vw !important;
+    }
+    
+    @keyframes slide-left {
+        from {left: 0}
+        to {left: -108vw}
+    }
+    
+    .searchbar-container {
+        flex: 1 0 calc(100% - 40px) !important;
+    }
+}
